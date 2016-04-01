@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<!--
+
+   (                      (         (
+ ( )\  (       )          )\ )      )\ )  (     (
+ )((_) )(   ( /(   (     (()/(  ___(()/(  )\ )  )(
+((_)_ (()\  )(_))  )\ )   ((_))|___|/(_))(()/( (()\
+ | _ ) ((_)((_)_  _(_/(   _| |     (_) _| )(_)) ((_)
+ | _ \| '_|/ _` || ' \))/ _` |      |  _|| || || '_|
+ |___/|_|  \__,_||_||_| \__,_|      |_|   \_, ||_|
+                                          |__/
+-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head xmlns:og="http://opengraphprotocol.org/schema/"
+        xmlns:fb="http://developers.facebook.com/schema/"
+    profile="http://www.w3.org/1999/xhtml/vocab">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="no-email-collection" content="http://www.metatags.info/nospamharvesting">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Brand-Fyr creates fine leather goods and fashion accessories. May the fire in your heart light our way." />
+
+        <meta property="fb:admins" content="niklas.holmgren,fredricvinna,martinrenck" />
+
+        {{#list_page}}
+        <meta property="og:description" content="May the fire in your heart light our way." />
+        <meta property="og:site_name" content="{{meta_og_site_name}}" />
+        <meta property="og:title" content="Brand-Fyr creates fine leather goods and fashion accessories" />
+        <meta property="og:type" content="{{meta_og_type}}" />
+        <meta property="og:url" content="{{meta_og_url}}" />
+        <meta property="og:image" content="http://cf.brand-fyr.com/brand-fyr-par-fb.jpg" />
+        {{/list_page}}
+
+        {{#product_page}}
+        {{#product}}
+        <meta property="og:site_name" content="{{store_name}}" />
+        {{#primary_image}}
+        <meta property="og:image" content="http:{{url-500}}" />
+        {{/primary_image}}
+        <meta property="og:title" content="{{title}}" />
+        <meta property="og:type" content="product" />
+        <meta property="og:url" content="{{meta_og_url}}" />
+        {{/product}}
+        {{/product_page}}
+
+        <link rel="shortcut icon" href="//d1a8yrmzrw1rxx.cloudfront.net/favicon.ico?test=true" />
+        <link rel="apple-touch-icon" href="//d1a8yrmzrw1rxx.cloudfront.net/a-y_favicon_60px_w_bg.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="//d1a8yrmzrw1rxx.cloudfront.net/a-y_favicon_76px_w_bg.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="//d1a8yrmzrw1rxx.cloudfront.net/a-y_favicon_120px_w_bg.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="//d1a8yrmzrw1rxx.cloudfront.net/a-y_favicon_152px_w_bg.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="//d1a8yrmzrw1rxx.cloudfront.net/a-y_favicon_152px_w_bg.png" />
+
+        <title>
+            {{#list_page}}
+            {{store_name}} – Fine leather goods and fashion accessories
+            {{/list_page}}
+
+            {{! Add the product title on product pages }}
+            {{#product_page}}{{store_name}}{{#product}} – {{title}}{{/product}}{{/product_page}}
+        </title>
+      <link href="{{assets_url}}/shared/css/base.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
+      <style>
+        /* ******************************
+
+        PAGE LAYOUT
+
+        ****************************** */
+        .page {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page_body {
+            zoom: 1;
+            position: relative;
+        }
+        .page_body:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .page_content {
+            background: white;
+            min-height: 100%;
+            width: 100%;
+            float: left;
+            position: relative;
+        }
+        .list_page .page_content {
+            z-index: 9;
+        }
+
+        .logo {
+            display: block;
+            position: fixed;
+            left: 0;
+            top: 0.5em;
+            width: 160px;
+            height: 66px;
+            z-index: 99;
+            padding: 0;
+            overflow: hidden;
+        }
+        .logo a {
+            color: #000;
+            text-decoration: none;
+        }
+        .logo img {
+            width: 160px;
+            height: 66px;
+        }
+        .logo img.logo_white {
+            display: none;
+        }
+        .logo img.logo_black {
+            display: none;
+        }
+        .logo img.monogram {
+            display: none;
+        }
+        .list_page img.logo_white {
+            display: block;
+        }
+        .product_page img.logo_black {
+            display: block;
+        }
+        @media (max-width: 23em) {
+            .shop .logo {
+                width: 17px;
+                left: 71px;
+            }
+            .shop .logo img {
+                margin-left: -71px;
+            }
+        }
+
+        .page_column {
+            margin: auto;
+            margin: auto;
+        }
+
+        .page_navigation ul {
+            margin: 2rem;
+            width: 6rem;
+        }
+        .page_navigation ul + ul {
+            margin-top: 1rem;
+        }
+        .page_navigation li > ul {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .page_navigation li {
+            text-align: center;
+            padding: 0.25rem 0;
+        }
+        .page_navigation a {
+            text-decoration: none;
+            font-weight: 400;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+            letter-spacing: 0.0666rem;
+            color: #060606;
+            -webkit-transition: color 0.2s ease;
+            -moz-transition: color 0.2s ease;
+            -ms-transition: color 0.2s ease;
+            -o-transition: color 0.2s ease;
+            transition: color 0.2s ease;
+        }
+        .page_navigation li.selected a {
+            color: #CCC;
+        }
+        .list_page .page_navigation a {
+            color: #CCC;
+        }
+        .page_navigation a:active {
+            color: #666;
+        }
+        .page_navigation a:hover {
+            color: #FFF;
+        }
+        .page_navigation li > ul a {
+            color: #999;
+        }
+        .page_navigation .pages_nav {
+            position: absolute;
+            bottom: 0;
+        }
+
+        #navigation {
+            position: fixed;
+            width: 10em;
+            top: 0;
+            left: 0;
+            height: 260px;
+            z-index: 99;
+        }
+
+        #navigation nav {
+            width: 100%;
+            height: 100%;
+            margin-top: 100px;
+            line-height: 18px;
+        }
+
+        .product_page #navigation {
+            display: none;
+        }
+
+
+        /* ******************************
+
+        PRODUCT TEASER
+
+        ****************************** */
+        .product_teaser {
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+
+        .product_teaser_image {
+            position: relative;
+            font-size: 0;
+        }
+        .product_teaser_image img {
+            position: absolute;
+            margin: 0 auto auto auto;
+            top: 0;
+            bottom: 0;
+            display: inline-block;
+            width: 100%;
+        }
+        .product_teaser_image:before {
+            position: relative;
+            content: '';
+            display: inline-block;
+            padding-bottom: 150%;
+            margin-right: -0.25em;
+            vertical-align: middle;
+            background: red;
+        }
+
+        .product_teaser_price {
+            font-size: 11px;
+            font-size: 0.6875rem;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .product_teaser_stock {
+            display: block;
+            margin-bottom: 1em;
+            font-weight: 500;
+            font-size: 8px;
+            font-size: 0.5rem;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .product_teaser_hover {
+            visibility: visible;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0);
+            text-align: center;
+            color: #060606;
+            font-size: 0;
+        }
+        .lt-ie9 .product_teaser_hover {
+            background: transparent;
+            zoom: 1;
+        }
+        .product_teaser_hover:before {
+            content: '';
+            position: relative;
+            display: inline-block;
+            height: 100%;
+            margin-right: -0.25em;
+            vertical-align: middle;
+            background: red;
+        }
+        .selected .product_teaser_hover {
+            visibility: visible;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .no-touch .product_teaser:hover .product_teaser_hover {
+            visibility: visible;
+        }
+
+        .product_teaser_hover_wrapper {
+            font-size: 14px;
+            font-size: 0.875rem;
+            font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+            font-weight: 500;
+            line-height: 16px;
+            line-height: 1.4rem;
+            letter-spacing: 0.0666em;
+            position: relative;
+            display: inline-block;
+            vertical-align: bottom;
+            width: 100%;
+            margin-bottom: -1em;
+        }
+        @media (min-width: 18.75em) {
+            .product_teaser_hover_wrapper {
+                font-size: 12px;
+                font-size: 0.75rem;
+            }
+        }
+        @media (min-width: 37.5em) {
+            .product_teaser_hover_wrapper {
+                font-size: 14px;
+                font-size: 0.875rem;
+            }
+        }
+        .boxsizing .product_teaser_hover_wrapper {
+            /* Acceptable values are border, content, and padding - content is the default W3C model */
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            padding: 0.5em;
+        }
+
+        .product_list {
+            padding: 7.5em;
+            overflow: hidden;
+        }
+
+        .product_list_wrapper {
+            margin: -0.5em;
+        }
+
+        .product {
+            width: 100%;
+            float: left;
+            margin-bottom: 1em;
+        }
+        @media (max-width: 30em) {
+            .product_list {
+                padding: 2em;
+            }
+        }
+        @media (min-width: 48em) {
+            .product {
+                width: 50%;
+            }
+        }
+        @media (min-width: 64em) {
+            .product {
+                width: 33.333333%;
+            }
+        }
+        .lt-ie9 .product, .no-mediaqueries .product {
+            width: 33.333333%;
+        }
+
+        /* ******************************
+
+        PRODUCT DETAIL
+
+        ****************************** */
+        .product_detail {
+            display: none;
+            overflow: hidden;
+            clear: both;
+            color: #191919;
+        }
+        .product_detail.selected {
+            display: block;
+        }
+        .product_single .product_detail {
+            display: block;
+        }
+
+        .product_detail_description {
+            font-size: 12px;
+            font-size: 0.75rem;
+            line-height: 16px;
+            line-height: 1rem;
+            margin: 0.85em 0 0 0;
+            font-style: normal;
+            font-weight: 400;
+            font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+            letter-spacing: 0.0666em;
+            text-align: center;
+            color: #666;
+        }
+
+        .product_detail_name {
+            font-size: 14px;
+            font-size: 0.875rem;
+            line-height: 16px;
+            line-height: 1rem;
+            font-weight: 500;
+            font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+            letter-spacing: 0.0666em;
+            margin: 0;
+            text-align: center;
+        }
+
+        .product_detail_price {
+            font-size: 11px;
+            font-size: 0.6875rem;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: 0.85em 0 0 0;
+            letter-spacing: 0.0666em;
+            line-height: 16px;
+            line-height: 1rem;
+            font-style: italic;
+        }
+
+        .product_detail_button, .stock_label, .tictail_button, .variations_select_label, .tictail_variations_select, .variations_option {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+            font-size: 11px;
+            font-size: 0.6875rem;
+            line-height: 64px;
+            line-height: 4rem;
+            /* Acceptable values are border, content, and padding - content is the default W3C model */
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            border-collapse: collapse;
+            display: block;
+            font-weight: 500;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            letter-spacing: 0.0666em;
+            border: 0.05em solid transparent;
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: 37.33333333em;
+            min-height: 3.83333333em;
+            text-align: center;
+            margin: auto;
+            margin-top: 0em;
+            text-transform: uppercase;
+            cursor: hand;
+            cursor: pointer;
+        }
+        .product_detail_button:hover, .stock_label:hover, .tictail_button:hover, .variations_select_label:hover, .tictail_variations_select:hover, .variations_option:hover {
+            /*border-bottom-color: #666;*/
+        }
+
+        .stock_label {
+            cursor: default;
+        }
+
+        .variations_container {
+            margin: 1.4em 0 0 0;
+        }
+        .variations_container:empty {
+            margin: 0;
+        }
+
+        .tictail_variation_label {
+            font-size: 11px;
+            font-size: 0.6875rem;
+            font-weight: 500;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            letter-spacing: 0.0666em;
+            text-transform: uppercase;
+            cursor: hand;
+            cursor: pointer;
+        }
+
+        .tictail_variation_label:after {
+            white-space: pre;
+            content:'\A';
+        }
+
+        .tictail_variation_radio {
+            cursor: pointer;
+            background: #191919;
+        }
+
+        .product_detail_cart {
+            margin: 0 auto 0 auto;
+            text-align: center;
+        }
+
+        .product_detail_terms {
+            margin: 0 auto 0 auto;
+        }
+        .product_detail_terms a {
+            font-size: 7px;
+            font-weight: 400;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1rem;
+            letter-spacing: 0.12em;
+            display: block;
+            color: #666;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .product_detail_social {
+            margin: 2em auto 0 auto;
+            overflow: hidden;
+            text-align: center;
+            display: none;
+        }
+        .product_detail_social .tictail_social_button {
+            padding: 0 0.5em;
+            display: inline-block;
+        }
+
+        #product_info.details {
+            position: relative;
+            width: 100%;
+            margin: 2em auto;
+        }
+
+        @media (min-width: 56.25em) {
+            #product_info.details {
+                position: fixed;
+                width: 160px;
+                height: auto;
+                right: 2em;
+                bottom: 1.5em;
+                margin: 0;
+                z-index: 2;
+            }
+        }
+
+        /* ******************************
+
+        PRODUCT SLIDER
+
+        ****************************** */
+        .product_slide {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            margin: 6em 0 4em 0;
+        }
+
+        .product_slide_figure {
+            outline: none;
+        }
+
+        .product_slide_figure img {
+            display: block;
+            height: 250px;
+            margin: auto;
+        }
+
+        .product_slide .slick-dots {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            height: 2em;
+        }
+        .product_slide .slick-dots li {
+            display: inline-block;
+            width: 1.5rem;
+            height: 2rem;
+        }
+        .product_slide .slick-dots li button {
+            border: none;
+            background: none;
+            color: #999;
+            width: 100%;
+            height: 100%;
+            outline: none !important;
+            cursor: pointer;
+        }
+        .product_slide .slick-dots li.slick-active button {
+            color: #191919;
+        }
+        .product_slide button.slick-prev.slick-arrow {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 15%;
+            background: none;
+            border: none;
+            text-indent: -99999px;
+            z-index: 1;
+            background: url("{{assets_url}}/75588/l_cursor.png") no-repeat 50% 50%;
+            background-size: 18px 32px;
+            outline: none !important;
+        }
+        .product_slide button.slick-next.slick-arrow {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 15%;
+            background: none;
+            border: none;
+            text-indent: -99999px;
+            z-index: 1;
+            background: url("{{assets_url}}/75588/r_cursor.png") no-repeat 50% 50%;
+            background-size: 18px 32px;
+            outline: none !important;
+        }
+
+        @media (min-width: 23em) {
+            .product_slide {
+                height: 350px;
+            }
+            .product_slide_figure img {
+                height: 350px;
+            }
+        }
+        @media (min-width: 37.5em) {
+            .product_slide {
+                height: 500px;
+            }
+            .product_slide_figure img {
+                height: 500px;
+            }
+        }
+        @media (min-width: 56.25em) {
+            html, body.product_page {
+                height: 100%;
+            }
+            .product_page .page,
+            .product_page .page_body,
+            .product_page .page_content,
+            .product_page .page_column,
+            .product_page .product_single,
+            .product_page .product_detail,
+            .product_page .product_slide,
+            .product_page .slick-list,
+            .product_page .slick-track,
+            .product_page .slick-slide {
+                height: 100%;
+            }
+            .product_slide {
+                height: 100%;
+                margin: 0;
+                overflow: hidden;
+            }
+            .product_slide_figure img {
+                height: 100%;
+            }
+            .product_slide button.slick-prev.slick-arrow {
+                background: none;
+                cursor: url("{{assets_url}}/75588/l_cursor.png") 0 32, w-resize;
+                width: 50%;
+            }
+            .product_slide button.slick-next.slick-arrow {
+                background: none;
+                cursor: url("{{assets_url}}/75588/r_cursor.png") 32 32, e-resize;
+                width: 50%;
+            }
+            .product_slide .slick-dots {
+                position: fixed;
+                width: 145px;
+                text-align: center;
+                height: 2em;
+                top: auto;
+                bottom: 1em;
+                right: auto;
+                left: 0;
+                z-index: 2;
+            }
+        }
+
+        /* ******************************
+
+        ETC.
+
+        ****************************** */
+
+        body {
+            line-height: 24px;
+            line-height: 1.5rem;
+            font-weight: 400;
+            font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+            color: #CCC;
+            background: #191919;
+            -webkit-font-variant-ligatures: no-common-ligatures;
+            -moz-font-variant-ligatures: no-common-ligatures;
+            -ms-font-variant-ligatures: no-common-ligatures;
+            -o-font-variant-ligatures: no-common-ligatures;
+            font-variant-ligatures: no-common-ligatures;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-font-smoothing: antialiased;
+            -moz-font-smoothing: antialiased;
+            -ms-font-smoothing: antialiased;
+            -o-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+        }
+
+        body.product_page {
+            color: #191919;
+            background: #fff;
+        }
+
+        .hamburger-icon, .navigation_toggle {
+            background-image: url("{{assets_url}}/75588/menu.png");
+            background-size: 30px 20px;
+        }
+
+        /*.arrow-icon, .variations_select_label:before {
+            background-image: url("{{assets_url}}/75588/triangle.png");
+            background-size: 8px 4px;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }*/
+
+        .dot-icon, .product_slider_index i {
+            background-image: url("{{assets_url}}/75588/dot.png");
+            opacity: 0.2;
+        }
+
+        .dot-active-icon, .product_slider_index i.active {
+            background-image: url("{{assets_url}}/75588/dot_active.png");
+            opacity: 1;
+        }
+
+        p + p {
+            margin-top: 1.33333333em;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-size: 2rem;
+            line-height: 48px;
+            line-height: 3rem;
+            font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 0.125em;
+            color: #000;
+            text-transform: uppercase;
+            padding: 0 0.5em 0 0.5em;
+        }
+
+        .post {
+            padding: 15em 4em 15em 4em;
+            max-width: 40em;
+            margin: auto;
+            text-align: center;
+            letter-spacing: 0.0666em;
+            color: #666;
+        }
+        .post h2 {
+            font-size: 24px;
+            font-size: 1.5rem;
+            font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+            font-weight: 400;
+            letter-spacing: 0.125em;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            color: #060606;
+        }
+        .post a {
+            text-decoration: none;
+            font-weight: 400;
+            color: #060606;
+            -webkit-transition: color 0.2s ease;
+            -moz-transition: color 0.2s ease;
+            -ms-transition: color 0.2s ease;
+            -o-transition: color 0.2s ease;
+            transition: color 0.2s ease;
+        }
+        .post a:hover {
+            color: #ccc;
+        }
+        .post a.outlink {
+            font-size: 11px;
+            font-size: 0.6875rem;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: 0.85em 0 0 0;
+            letter-spacing: 0.0666em;
+            line-height: 16px;
+            line-height: 1rem;
+            font-style: italic;
+        }
+
+        .banner {
+            letter-spacing: 0.125em;
+            position: relative;
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: #666;
+            padding: 5em 0;
+        }
+        .banner.full_height {
+            height: 666px;
+            padding: 0;
+        }
+        .banner h2 {
+            width: 100%;
+            font-size: 16px;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #191919;
+        }
+        .banner h3 {
+            font-variant: small-caps;
+            letter-spacing: 0.1em;
+        }
+        .banner ul {
+            margin: 0 0 2em 0;
+            list-style: none;
+            padding: 0;
+        }
+        .banner .post {
+            color: #191919;
+        }
+        .banner.full_height .title {
+            line-height: 666px;
+        }
+        .banner.shop_closed {
+            background-image: url(//d1a8yrmzrw1rxx.cloudfront.net/brand-fyr-han.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        .banner.shop_closed h2 {
+            color: #CCC;
+            background-color: rgba(0,0,0,0.8);
+        }
+        .banner.black {
+            background-color: #191919;
+            color: #CCC;
+        }
+        .banner.black .post {
+            color: #CCC;
+        }
+        .banner.black h2 {
+            color: #CCC;
+        }
+        .banner.black a {
+            color: #FFF;
+        }
+
+        #menu_blocker {
+            display: none;
+        }
+
+        .touch #menu_blocker {
+            display: block;
+            position: absolute;
+            top: 0;
+            content: "#";
+            height: 70px;
+            width: 100%;
+            min-width: 1024px;
+            background: transparent;
+            padding-left: 100%;
+            z-index: 100;
+        }
+
+        .hero {
+            height: 666px;
+            padding: 0;
+        }
+        .hero.black {
+            background: none;
+        }
+        .hero_image {
+            background-color: #191919;
+            background-image: url(//d1a8yrmzrw1rxx.cloudfront.net/brand-fyr-par-bg-inv.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            height: 666px;
+            width: 100%;
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+        .hero a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            z-index: 999999;
+        }
+
+        .banner.about_page {
+            height: auto;
+        }
+        .banner.about_page .post {
+            padding-top: 8em;
+            padding-bottom: 8em;
+            max-width: 500px;
+        }
+
+        .banner.media_page {
+            padding: 1em 0;
+            height: auto;
+        }
+        .banner.media_page .post {
+            padding: 8em 0;
+            max-width: 256px;
+        }
+        .banner.media_page .media_product_images {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            overflow: hidden;
+        }
+        .banner.media_page figure {
+            float: left;
+            margin: 0 7px 14px 7px;
+            line-height: 0;
+        }
+        @media (max-width: 37.5em) {
+            #media_download_all {
+                display: none;
+            }
+        }
+
+        /* ******************************
+
+        TICTAIL COLOPHONES
+
+        ****************************** */
+
+        a#__ttLogo {
+            display: none;
+        }
+
+        #tt_colophon {
+            visibility: hidden;
+        }
+        .shop #tt_colophon {
+            visibility: visible;
+        }
+
+        </style>
+        <script src="{{assets_url}}/75588/modernizr.custom.js"></script>
+    </head>
+    <body class="{{#list_page}}list_page{{/list_page}}
+            {{#product_page}}product_page shop{{/product_page}}">
+    <div class="page">
+        <div class="page_body">
+            <h1 class="logo">
+                <a href="{{store_url}}">
+                    <img src="//d1a8yrmzrw1rxx.cloudfront.net/logo.black.png" alt="{{store_name}}" class="logo_black"/>
+                    <img src="//d1a8yrmzrw1rxx.cloudfront.net/logo.white.png" alt="{{store_name}}" class="logo_white"/>
+                </a>
+            </h1>
+
+            {{#list_page}}
+            <div class="container banner black hero">
+                <div class="hero_image"></div>
+                <a href="#"></a>
+            </div>
+            {{/list_page}}
+
+            <div id="navigation" class="page_navigation">
+                <nav>
+                <ul class="pages_nav">
+                    <li class="shop_item">
+                        <a href="#product_list">{{#lang}}Shop{{/lang}}</a>
+                    </li>
+                    <li class="about_item">
+                        <a href="#about">{{#lang}}About{{/lang}}</a>
+                    </li>
+                    <li class="retailers_item">
+                        <a href="#retailers">{{#lang}}Retailers{{/lang}}</a>
+                    </li>
+                    <li class="media_item">
+                        <a href="#media">{{#lang}}Media{{/lang}}</a>
+                    </li>
+                    <li class="contact_item">
+                        <a href="#contact">{{#lang}}Contact{{/lang}}</a>
+                    </li>
+                </ul>
+                </nav>
+            </div>
+            <div id="page" class="page_content">
+                <section class="page_column">
+
+                    {{! This block is rendered when displaying a list of products }}
+                    {{#list_page}}
+                    <div class="container shop">
+                    <div class="product_list" id="product_list">
+                        <div class="product_list_wrapper">
+                            {{! Output a list if we have any products }}
+                            {{#products}}
+                            <article id="{{id}}" class="product" data-url="{{url}}" data-price="{{price}}">
+                                <a href="{{url}}" class="product_teaser" data-product-id="{{id}}">
+                                    <div class="product_teaser_image">
+                                        {{#primary_image}}
+                                            <img src="{{url-1000}}" alt="{{title}}"/>
+                                        {{/primary_image}}
+                                    </div>
+                                    <div class="product_teaser_hover">
+                                        <div class="product_teaser_hover_wrapper">
+                                            <h2 class="product_teaser_title">{{title}}</h2>
+                                            {{#in_stock}}
+                                            <span class="product_teaser_price">{{price_with_currency}}</span>
+                                            {{/in_stock}}
+                                            {{#out_of_stock}}<span class="product_teaser_stock">{{#lang}}Out of stock{{/lang}}</span>{{/out_of_stock}}
+                                        </div>
+                                    </div>
+                                </a>
+                                <section class="product_detail" data-product-id="{{id}}">
+                                    <div class="product_slide">
+                                        <div class="product_slide_wrapper">
+                                            {{#all_images}}
+                                            <figure class="product_slide_figure">
+                                                <img src="{{assets_url}}/75588/transparent.gif" data-src="{{url-2000}}" alt="{{title}} - {{position}}"/>
+                                                <noscript>
+                                                    <img src="{{url-2000}}" alt="{{title}}"/>
+                                                </noscript>
+                                            </figure>
+                                            {{/all_images}}
+                                        </div>
+                                        <div class="product_slider_index">
+                                            {{#all_images}}<i></i>{{/all_images}}
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <div class="product_detail_name">{{title}}</div>
+                                        <div class="product_detail_price">{{price_with_currency}}</div>
+                                        <div class="product_detail_description">{{description}}</div>
+                                        <div class="product_detail_cart">
+                                        {{#out_of_stock}}<div class="stock_label">{{#lang}}Out of stock{{/lang}}</div>{{/out_of_stock}}
+                                        {{#add_to_cart}}
+                                            {{#variations_select}}{{/variations_select}}
+                                            <label class="variations_select_label">{{#lang}}Select{{/lang}}</label>
+                                            {{#add_to_cart_button}}{{#lang}}Add to cart{{/lang}}{{/add_to_cart_button}}
+                                        {{/add_to_cart}}
+                                        </div>
+                                        <div class="product_detail_social">
+                                            {{social_buttons}}
+                                        </div>
+                                        <ul class="product_detail_terms">
+                                            <li>
+                                                {{#return_policy}}{{#lang}}Return policy{{/lang}}{{/return_policy}}
+                                            </li>
+                                            <li>
+                                                {{#terms}}{{#lang}}Terms & Conditions{{/lang}}{{/terms}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </article>
+                            {{/products}}
+                            {{! END list of products }}
+                        </div>
+                    </div>
+                    </div>
+
+                    <article id="about" class="container about_page banner full_height black">
+                        <div class="post html_content">
+                        <p>{{store_description}}</p>
+                        </div>
+                    </article>
+
+                    <article id="retailers" class="container retailers_page banner full_height">
+                        <div class="post html_content">
+                            <address>
+                                <h2>JUS</h2>
+                                Brunnsgatan 7<br/>
+                                Stockholm<br/>
+                                Sweden<br/><br/>
+                                <a href="https://goo.gl/maps/Yyg1STXyAZk" target="_blank" class="outlink">Map</a>
+                            </address>
+                        </div>
+                    </article>
+
+                    <article id="media" class="container media_page banner full_height black">
+                        <div class="post html_content">
+                            <h3>press images</h3>
+                            <div class="media_product_images">
+                            {{#products}}
+                                {{#all_images}}
+                                    <figure class="media_product_figure">
+                                        <a href="{{url-2000}}" target="_blank">
+                                            <img src="{{url-100}}" alt="{{title}}" width="50" height="68" />
+                                        </a>
+                                    </figure>
+                                {{/all_images}}
+                            {{/products}}
+                            </div>
+                            <a href="//d1a8yrmzrw1rxx.cloudfront.net/Brand-Fyr+Collection+No+1+Press+Images.zip" class="outlink" id="media_download_all">Download all</a>
+                        </div>
+                    </article>
+
+                    <article id="contact" class="container contact_page banner full_height">
+                        <div class="post html_content">
+                            <h3>mail</h3>
+                            <ul>
+                                <li><a href="mailto:office@a-y.co">Head Office</a></li>
+                                <li><a href="mailto:shop@a-y.co">Customer Care</a></li>
+                                <li><a href="mailto:sales@a-y.co">Retailers</a></li>
+                            </ul>
+                            <h3>links</h3>
+                            <ul>
+                                <li><a href="https://www.facebook.com/brandfyr">Facebook</a></li>
+                                <li><a href="https://instagram.com/brandfyr">Instagram</a></li>
+                                <li><a href="https://twitter.com/brandfyr">Twitter</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <footer class="container banner black">
+                        <div><a href="#" class="monogram"><img src="//d1a8yrmzrw1rxx.cloudfront.net/brand-fyr-monogram-ccc.png" alt="A-Y" width="17" height="40" style="margin:3em 0 1em 0;"/></a></div>
+                        <p style="font-size:0.66rem; line-height:1.5em;">
+                            May the fire in your heart<br/>
+                            light our way
+                        </p>
+                    </footer>
+                    {{/list_page}}
+
+                    {{! This block is rendered when displaying a single product }}
+                    {{#product_page}}
+                    {{#product}}
+                    <div class="product_single">
+                        <article class="product_detail" data-product-id="{{id}}" itemscope itemtype="http://schema.org/Product">
+                            <div class="product_slide">
+                                    {{#all_images}}
+                                    <figure class="product_slide_figure">
+                                        <img src="{{url-2000}}" alt="{{title}} - {{position}}"{{#is_primary}} itemprop="image"{{/is_primary}}/>
+                                    </figure>
+                                    {{/all_images}}
+                            </div>
+                            <div class="details" id="product_info">
+                                <div class="product_detail_name" itemprop="name">{{title}}</div>
+                                <div class="product_detail_description" itemprop="description">{{description}}</div>
+                                <div class="product_detail_price" itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span itemprop="price">{{price_with_currency}}</span></div>
+                                <div class="product_detail_cart">
+                                {{#out_of_stock}}<div class="stock_label">{{#lang}}Out of stock{{/lang}}</div>{{/out_of_stock}}
+                                {{#add_to_cart}}
+                                    <div class="variations_container">{{#variations_radio}}{{/variations_radio}}</div>
+                                    {{#add_to_cart_button}}{{#lang}}Add to cart{{/lang}}{{/add_to_cart_button}}
+                                {{/add_to_cart}}
+                                </div>
+                                <div class="product_detail_social">
+                                    {{social_buttons}}
+                                </div>
+                                <ul class="product_detail_terms">
+                                    <li>
+                                        {{#return_policy}}{{#lang}}Return policy{{/lang}}{{/return_policy}}
+                                    </li>
+                                    <li>
+                                        {{#terms}}{{#lang}}Terms & Conditions{{/lang}}{{/terms}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                    {{/product}}
+                    {{/product_page}}
+                    {{! END single product }}
+
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script
+   src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+   <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+    <script src="{{assets_url}}/75588/vendor-pack.min.js"></script>
+    <script>
+        $(function(){
+            var scrollTo = function(el) {
+                var body = $("html, body");
+                var dist = el != undefined ? $(el).offset().top : 0;
+                $(".logo").fadeOut(400);
+                body.stop().animate({scrollTop:dist}, dist > 2000 ? 1500 : 500, 'swing', function() {
+                    $(".logo").fadeIn(400);
+                });
+            };
+            $(".pages_nav li a").click(function(e){
+                e.preventDefault();
+                scrollTo($($(e.target).attr("href")));
+            });
+            $(".list_page .logo, .list_page .monogram").click(function(e){
+                e.preventDefault();
+                scrollTo();
+            });
+            $(".product_page .logo").click(function(e){
+                e.preventDefault();
+                window.location = "/";
+            });
+            $(".hero a").click(function(e){
+                e.preventDefault();
+                scrollTo($("#product_list"));
+            });
+            var onScroll = _.throttle(function(){
+                var scroll = $(window).scrollTop();
+                $(".list_page #navigation").css("opacity", 1 - (scroll / (666 / 3)));
+                if (scroll > 250) {
+                    $(".list_page #navigation").hide();
+                } else {
+                    $(".list_page #navigation").show();
+                }
+                var containers = $(".container").filter(function(){
+                    var el = $(this);
+                    var top = el.offset().top;
+                    var height = el.height();
+                    return scroll >= top && scroll < (top + height);
+                });
+                if (containers.hasClass("shop")) {
+                    $("body.list_page").addClass("shop");
+                } else {
+                    setTimeout(function(){
+                        $("body.list_page").removeClass("shop");
+                    }, 100);
+                }
+                if (containers.hasClass("black") || scroll < 0) {
+                    $(".list_page .logo img.logo_white").fadeIn(400);
+                    $(".list_page .logo img.logo_black").fadeOut(50);
+                } else {
+                    $(".list_page .logo img.logo_white").fadeOut(50);
+                    $(".list_page .logo img.logo_black").fadeIn(400);
+                }
+            }, 200);
+            $(window).scroll(onScroll);
+            $(".product_slide").slick({ dots: true, lazyLoad: "progressive" });
+            $(document).on('DOMNodeInserted', function(e) {
+                if ($(e.target).is('.tictail_fullscreen')) {
+                    $(e.target).hide();
+                    var iframe = $(".tictail_fullscreen_iframe iframe").contents();
+                    iframe.ready(function(){
+                        $(this).find("body").ready(function(){
+                            setTimeout(function(){
+                                $(".tictail_fullscreen_iframe iframe").contents().find("body").css("font-family", "Helvetica");
+                                $(e.target).fadeIn();
+                            }, 1000);
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-68086580-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    </body>
+</html>
