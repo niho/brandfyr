@@ -54,6 +54,14 @@
         <link rel="apple-touch-icon" sizes="152x152" href="//d1a8yrmzrw1rxx.cloudfront.net/a-y_favicon_152px_w_bg.png" />
         <link rel="apple-touch-icon" sizes="152x152" href="//d1a8yrmzrw1rxx.cloudfront.net/a-y_favicon_152px_w_bg.png" />
 
+        <script>
+        var geolifygeoredirect = document.createElement('script')
+        geolifygeoredirect.setAttribute('type','text/javascript')
+        geolifygeoredirect.async = 1
+        geolifygeoredirect.setAttribute('src', '//www.geolify.com/georedirectv2.php?id=11824&refurl='+document.referrer)
+        document.getElementsByTagName('head')[0].appendChild(geolifygeoredirect)
+        </script>
+
         <title>
             {{#list_page}}
             {{store_name}} – Fine leather goods and fashion accessories
@@ -822,6 +830,9 @@
             list-style: none;
             padding: 0;
         }
+        .banner blockquote {
+            font-style: italic;
+        }
         .banner .post {
             color: #191919;
         }
@@ -878,10 +889,10 @@
         }
         .hero_image {
             background-color: #191919;
-            background-image: url(//d1a8yrmzrw1rxx.cloudfront.net/brand-fyr-par-bg-inv.jpg);
+            background-image: url(//d1a8yrmzrw1rxx.cloudfront.net/a-y_no_2/101_han.jpg);
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: center center;
+            background-position: center 58%;
             height: 666px;
             width: 100%;
             position: fixed;
@@ -979,9 +990,6 @@
                     <li class="retailers_item">
                         <a href="#retailers">{{#lang}}Retailers{{/lang}}</a>
                     </li>
-                    <li class="media_item">
-                        <a href="#media">{{#lang}}Media{{/lang}}</a>
-                    </li>
                     <li class="contact_item">
                         <a href="#contact">{{#lang}}Contact{{/lang}}</a>
                     </li>
@@ -1063,13 +1071,109 @@
                     </div>
                     </div>
 
-                    <article id="about" class="container about_page banner full_height black">
+                    <article id="about" class="container about_page banner black">
                         <div class="post html_content">
-                        <p>{{store_description}}</p>
+                            <h3>Collection N° 2</h3>
+                            <p>Four thousand years ago, empress Leizu was strolling in
+the imperial garden of tranquility when she noticed some mysteriously shimmering cocoons in a mulberry tree.
+She collected a few and returned with them to her palace.
+While sipping a cup of tea, she accidentally dropped one of
+the cocoons into the steaming water. A fine thread started
+separating itself from the cocoon and Leizu found that she
+could unwind the soft yet resilient thread around her finger.
+She persuaded her husband, the Yellow Emperor, a patron
+of esoteric arts, to give her a mulberry orchard where she
+could cultivate these remarkable creatures. And soon,
+Chinese silk was the most sought-after luxury item
+traded across the Eurasian continent.</p>
+
+<p>Among the earlier evidences of the long distance silk trade
+is the shroud of a three thousand year old Egyptian mummy.
+Around the time of his reign, in another great empire between
+Egypt and China, two star-crossed babylonian lovers dreamt
+of a future together. But because of their families’ rivalry their
+bond was hopeless. Only through a crack in a wall separating
+their houses could Thisbe and Pyramus whisper their longing
+for one another. One day, they arranged to rendez-vous under
+a familiar tree. Cloaked in a silk scarf, Thisbe arrives first, but
+is startled by a lioness dripping with blood from a fresh kill.
+She flees. In the haste her scarf is left behind, soiled by the
+curious cat. Pyramus then arrives, horrified at the sight of
+Thisbe’s blood stained scarf. Believing the beast had devoured
+his inamorata, he takes his life by falling on his sword. Thisbe
+soon returns, only to find her valentine’s exsanguinated body
+in the shade of the tree where they had hoped to seal their love. Destroyed by sorrow, she drains herself by the same sword.
+As she bleeds out, the gods consider her lament. In honor of
+the two’s sorrowful love they decide to forever change the
+colour of the tree’s fruits to deep crimson. And the tree itself,
+the weeping mulberry, was to be named after Moros,
+the spirit of impending doom.</p>
+
+<p>Since the ancient days, silk is harvested from the caterpillar
+of the ashen mulberry silkmoth, Bombyx Mori, and is crafted
+into a range of different forms of textiles. Brand-Fyr scarves
+are woven into the finest Crêpe de Chine quality. The term
+crespe refers to a form of the fabric associated specifically
+with mourning, bespeaking an exquisite lightweight silk
+of solacing virtue.</p>
+
+<p>The metamorphosis of the Bombyx Mori is suspended,
+its shroud is now yours to enrobe. At your discretion,
+our scarves come in three screens, hand printed
+in somber black on ash white.</p>
                         </div>
                     </article>
 
-                    <article id="retailers" class="container retailers_page banner full_height">
+                    <article id="collection-no-1" class="container banner full_height">
+                        <div class="post html_content">
+                            <h3>Collection N° 1</h3>
+                            <p>The first collection is described as “beautifully feral” – a touch
+of metal and bondage with a strong iconographic lineation and
+striking luxury aura. Inspiration is drawn from Scandinavian
+fable with influences from musical romanticism and magic.</p>
+
+<p>The materials used are select vegetable-tanned Italian leathers
+of finest premium grade bound with solid brass details. Cutting,
+fabrication and stitching is done by hand in the Stockholm atelier
+by expert artisans renowned for their skill and experience using
+original manufacturing methods and traditional craftsmanship.</p>
+                        </div>
+                    </article>
+
+                    <article id="etablissement" class="container banner full_height black">
+                        <div class="post html_content">
+                            <h3>Établissement</h3>
+                            <p>Brand-Fyr was founded in 2015 by creative director Martin Renck
+together with brother and film director Johan Renck and long time
+business associate Fredric Vinnå.</p>
+
+<p>Brand-Fyr creates accessories of classic yet distinctly unique style.
+Exquisiteness, irreverence and highest quality materials are the
+common threads running through each Brand-Fyr creation.</p>
+                        </div>
+                    </article>
+
+                    <article id="sobriquet" class="container banner">
+                        <div class="post html_content">
+                            <h3>Sobriquet</h3>
+                            <blockquote>
+                                <p>“I remember my father speaking of a clothing store, apparently run from within the extended family, where his parents used to take him and his brother once a year throughout the 1940s, to stock up on itchy brown wool clothes of yesteryear’s cut to be mandatorily worn every day until next year’s return.</p>
+
+<p>After a bit of research, I found some quite fascinating and rather unexpected history. Turns out my forbears has been engaged in apparel production as of late medieval times. Since the 11th century, the city of Neumünster in Schleswig-Holstein had been the center for textile and leather goods production in Northern Europe, where the Renck family was an integral part of the regional textile industry for more than three hundred years. Sadly, the era ended in blazing inferno. And not just once.</p>
+
+<p>In 1816, following two centuries in the craft, the family went on to establish the first fully integrated textile factory in Neumünster: Tuchfabrik Renck. A few years later, a steam engine was imported from Manchester and the factory grew to engage over one hundred and fifty employees, kicking off the industrial era in the region. Alas, shortly thereafter, the factory was engulfed in a raving sea of fire, destroyed. Although rebuilt, after which it remained in operation for quite a few years, something was forever charred. The german Renck textile dynasty would soon be extinguished.</p>
+
+<p>Fifteen years before the Neumünster epoch went up in smoke, two of the partners, Ferdinand and Johann (my great grandfather) Renck, left Germany to try their luck in the blooming industrial idyll of Eslöv in southern Sweden where they set up Rencks Yllefabrik in 1869. The new plant included a mitting facility, a spinning mill and a sowing factory, and was where Eslöv’s locally world famous plaid shawls were produced. Just short of thirty years later, this plant too was devoured by flames and burnt to the ground.</p>
+
+<p>No real clues as to what caused the fire, but around the same time, Johann’s daughter Elisabeth married an Albert Sahlin, the other local textile tycoon and heir of Eslöv’s dominant textile industry. And from the ashes rose something else. Their bond sparked a new age, transforming the local trade from production of fabrics to designing and producing prêt-à-porter fashion for a hundred years to come.”</p>
+                            </blockquote>
+                            <p>At Brand-Fyr (‘fire’ in German and Scanian respectively) we carry the torch by creating exquisite accessories for carrying yourself. May the fire in your heart light our way.
+<br/><br/>
+/ Martin Renck, founder and creative director</p>
+                        </div>
+                    </article>
+
+                    <article id="retailers" class="container retailers_page banner full_height black">
                         <div class="post html_content">
                             <address>
                                 <h2>JUS</h2>
@@ -1078,24 +1182,6 @@
                                 Sweden<br/><br/>
                                 <a href="https://goo.gl/maps/Yyg1STXyAZk" target="_blank" class="outlink">Map</a>
                             </address>
-                        </div>
-                    </article>
-
-                    <article id="media" class="container media_page banner full_height black">
-                        <div class="post html_content">
-                            <h3>press images</h3>
-                            <div class="media_product_images">
-                            {{#products}}
-                                {{#all_images}}
-                                    <figure class="media_product_figure">
-                                        <a href="{{url-2000}}" target="_blank">
-                                            <img src="{{url-100}}" alt="{{title}}" width="50" height="68" />
-                                        </a>
-                                    </figure>
-                                {{/all_images}}
-                            {{/products}}
-                            </div>
-                            <a href="//d1a8yrmzrw1rxx.cloudfront.net/Brand-Fyr+Collection+No+1+Press+Images.zip" class="outlink" id="media_download_all">Download all</a>
                         </div>
                     </article>
 
